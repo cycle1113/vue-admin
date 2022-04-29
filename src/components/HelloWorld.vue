@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-// eslint-disable-next-line no-undef
+import { ref, defineProps } from 'vue'
 defineProps<{ msg: string }>()
 
 const count = ref(0)
