@@ -1,5 +1,6 @@
 <template>
   <h1>首頁</h1>
+  <el-button>测试</el-button>
 </template>
 
 <script lang="ts" setup>

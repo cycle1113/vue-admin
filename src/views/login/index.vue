@@ -4,11 +4,11 @@
 
 <script lang="ts" setup>
 import { onMounted } from 'vue'
-import { gettoken } from '../../api/user'
+import { adminloginApi } from '../../api/user'
 
 onMounted(() => {
-  gettoken().then(res => {
-    console.log(res)
+  adminloginApi({ password: '123456', username: 'admin' }).then(res => {
+    console.log(res.data)
   })
 })
 </script>

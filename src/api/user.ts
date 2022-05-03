@@ -1,15 +1,30 @@
-/**
- * 用户相关的请求模块
- */
 import request from '../utlis/request'
 
-export const gettoken = () => {
-  return request({
-    method: 'POST',
-    url: '/admin/login',
-    data: {
-      username: 'admin',
-      password: '123456'
-    }
-  })
+interface LoginParams{
+    password:string;
+    username:string;
+
 }
+
+interface LoginData{
+    token:string;
+    tokenHead:string;
+}
+
+interface AdminInfoData{
+    icon:null;
+    menus:unknown[];
+    roles:string[];
+    username:string;
+}
+
+interface ResponseData<T=null>{
+    code:number;
+    message:string;
+    data?:T|null;
+}
+// 登录接口
+export const adminloginApi = (data:LoginParams):Promise<ResponseData<LoginData>> => request.post('/admin/login', data)
+
+// 获取用户信息
+export const adminInfo = ():Promise<ResponseData<AdminInfoData>> => request.get('/admin/info')
