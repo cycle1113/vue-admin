@@ -4,11 +4,17 @@
 
 <script lang="ts" setup>
 import { onMounted } from 'vue'
-import { adminloginApi } from '../../api/user'
+import { adminloginApi, adminInfo } from '../../api/user'
 
 onMounted(() => {
   adminloginApi({ password: '123456', username: 'admin' }).then(res => {
-    console.log(res.data)
+    if (res.data) {
+      localStorage.setItem('token', res.data.tokenHead + res.data.token)
+      console.log(res.data)
+      adminInfo().then(res => {
+        console.log(res.code)
+      })
+    }
   })
 })
 </script>

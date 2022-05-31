@@ -10,6 +10,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@amap/amap-jsapi-types": "^0.0.8",
     "axios": "^0.27.2",
     "element-plus": "^2.1.11",
     "vue": "^3.2.25",
