@@ -26,6 +26,7 @@
       <el-form-item>
         <el-button
           type="primary"
+          @click="query"
         >
           查询
         </el-button>
@@ -120,6 +121,9 @@ const state = reactive({
   pageSize: 5,
   search: ''
 })
+const query = () => {
+  console.log('123')
+}
 </script>
 
 <style lang="scss" scoped>
@@ -135,4 +139,5 @@ const state = reactive({
         margin:15px;
     }
 
-}</style>
+}
+</style>
