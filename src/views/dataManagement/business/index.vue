@@ -55,11 +55,18 @@
         label="Tag"
       />
     </el-table>
+    <el-button
+      type="primary"
+      @click="setToken"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
+const setToken = (token: string) => {
+  localStorage.setItem('token', token)
+}
 const state = reactive({
   tableData: [
     {
@@ -127,9 +134,9 @@ const query = () => {
 </script>
 
 <style lang="scss" scoped>
-.el-main{
-  line-height: 20px;
-}
+// .el-main{
+//   line-height: 20px;
+// }
 .table-container{
     .form-inline{
         margin:15px;
